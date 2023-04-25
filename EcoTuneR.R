@@ -92,6 +92,11 @@ ecotuneR <- function(combined_output=NA,export=FALSE, bypass_check= FALSE){
       ref$lo <- subset(ref$w_TL, TL < PD.L )# %>% nrow() Below Confidence Interval 
       
       
+      
+      
+      
+      
+      
       if(nrow(ref$wo_TL) >0){
         content_pies <- fluidRow(column(6,plotOutput("piePlot1")),column(6,plotOutput("piePlot2")))
       } else { 
@@ -319,6 +324,7 @@ ecotuneR <- function(combined_output=NA,export=FALSE, bypass_check= FALSE){
           {tabItem(
             tabName = "tab1",
             h1("Summary"),
+            h2("In place of unpublished data, this tool currently references a randomly-generated example dataset. This is meant for demonstration only."),
             content_pies,
             h3(strong(paste0(round((nrow(ref$ci)/nrow(ref$w_TL))*100,digits = 0),"% of all available EwE TLs fit within 95% CI of SIA TLs")), align = "center"),
             
